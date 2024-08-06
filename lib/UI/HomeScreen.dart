@@ -238,7 +238,7 @@ bottomNavigationBar: BottomNavigationBar(
       case 3:
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => CartView()),
+          MaterialPageRoute(builder: (context) => CartPage(cartItems: [])),
         );
         break;
       case 4:

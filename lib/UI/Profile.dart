@@ -3,6 +3,7 @@ import 'Profile.dart';
 import 'OrderDetail.dart';
 import 'Cart.dart';
 import 'HomeScreen.dart';
+import 'LoginSreen.dart';
 
 class Profile extends StatelessWidget {
   @override
@@ -48,7 +49,7 @@ class Profile extends StatelessWidget {
             case 3:
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => OrderDetail()),
+                MaterialPageRoute(builder: (context) => OrderDetailsScreen()),
               );
               break;
             case 4:
@@ -222,7 +223,7 @@ class Profile extends StatelessWidget {
         onPressed: () {
           Navigator.push(
             context,
-            MaterialPageRoute(builder: (context) => LoginScreen()),
+            MaterialPageRoute(builder: (context) => Loginview()),
           );
         },
         child: Text(
@@ -238,83 +239,11 @@ class Profile extends StatelessWidget {
   }
 }
 
-class CartPage extends StatelessWidget {
-  final List<Map<String, dynamic>> cartItems;
 
-  const CartPage({required this.cartItems});
 
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Cart'),
-      ),
-      body: ListView.builder(
-        itemCount: cartItems.length,
-        itemBuilder: (context, index) {
-          final item = cartItems[index];
-          return ListTile(
-            title: Text(item['name']),
-            subtitle: Text('\$${item['price']}'),
-          );
-        },
-      ),
-    );
-  }
-}
 
-class MyHomePage extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Home Page'),
-      ),
-      body: Center(
-        child: Text('Home Page Content'),
-      ),
-    );
-  }
-}
 
-class OrderDetail extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Order Detail'),
-      ),
-      body: Center(
-        child: Text('Order Detail Content'),
-      ),
-    );
-  }
-}
 
-class LoginScreen extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Login Screen'),
-      ),
-      body: Center(
-        child: Text('Login Screen Content'),
-      ),
-    );
-  }
-}
 
-class HomeScreen extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Home Screen'),
-      ),
-      body: Center(
-        child: Text('Home Screen Content'),
-      ),
-    );
-  }
-}
+
+
